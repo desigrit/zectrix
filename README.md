@@ -2,9 +2,7 @@
 
 **A quiet Google Calendar display for the Zectrix Note 4c. Updated at midnight, readable all day.**
 
-![Calendar preview with fictional events and a Halloween pumpkin and cat](docs/images/calendar-halloween.png)
-
-*The actual display renderer, shown at 2x with fictional events. Halloween is an example illustration for this README; the automatic holiday list covers US federal and major Indian holidays.*
+![Zectrix calendar with a Halloween pumpkin and cat](docs/images/calendar-halloween.png)
 
 ## Why this exists
 
@@ -179,9 +177,9 @@ The setup screen pauses after 30 minutes without activity. Press the front butto
 
 US dates are calculated from the [federal holiday rules](https://www.opm.gov/policy-data-oversight/pay-leave/federal-holidays/), including observed dates. Indian holidays are filtered from Google's Holidays in India calendar to the selection in [`holidays.py`](note_calendar/holidays.py), including Diwali, Holi, Eid, Onam and major national holidays. A bundled public cache provides dates through December 2027; live Google connections refresh it.
 
-The original pixel sprites include lamps, a tree, a crescent, a flag, harvest artwork, a sun and the Halloween pumpkin and cat shown above. Halloween is used by the documentation fixture, without being added to the federal holiday list. Dates and artwork are separate, so an illustration does not determine a holiday's date.
+The original pixel sprites include lamps, a tree, a crescent, a flag, harvest artwork, a sun and the Halloween pumpkin and cat shown above.
 
-Regenerate the README image using only fictional data:
+Regenerate the README image:
 
 ```bash
 python scripts/render_readme.py
@@ -191,7 +189,7 @@ python scripts/render_readme.py
 
 The screen holds its image while powered down. The firmware switches off Wi-Fi, display power and unused powered peripherals before deep sleep, and skips screen refreshes when the image digest is unchanged. **Actual days per charge have not been measured.** Sleep current, Wi-Fi connection time, temperature and manual use all affect runtime.
 
-Calendar caches, Google credentials and pairing secrets live under ignored `.data/`. Wi-Fi settings stay on the device. Event descriptions are not saved in the controller cache. This repository contains fictional preview events and public holiday dates, with no personal calendar snapshot or device flash backup.
+Calendar caches, Google credentials and pairing secrets live under ignored `.data/`. Wi-Fi settings stay on the device. Event descriptions are not saved in the controller cache.
 
 The controller and hub integration are intended for a trusted local network. Device requests use a pairing key, admin writes use CSRF checks, and remote administration can use SSH. The LAN device connection uses HTTP.
 
@@ -203,7 +201,7 @@ firmware/               ESP32-S3 firmware and partition layout
 deploy/                 systemd example and optional ESL Hub integration
 scripts/                Font generation, public preview and source packaging
 tests/                  Calendar, display, schedule, connection and proxy checks
-docs/images/            Public screenshots using fictional data
+docs/images/            Calendar screenshots
 DESIGN.md               Typography, palette and layout rules
 PRODUCT.md              Product scope and constraints
 THIRD_PARTY_NOTICES.md   Font and reference-driver notices
