@@ -1,0 +1,605 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-27T18:46:34.588870+00:00",
+  "title": "Design System: Note calendar",
+  "extensions": {
+    "sources": {
+      "visualAuthority": "docs/images/calendar-halloween.png",
+      "authorityDescription": "Compact calendar composition with a tight date block and Calibri-like lettering. The public example uses fictional events.",
+      "implementation": [
+        "note_calendar/render.py",
+        "note_calendar/typography.py",
+        "note_calendar/art.py",
+        "note_calendar/templates/index.html",
+        "note_calendar/static/app.css"
+      ],
+      "renderedEvidence": [
+        "docs/images/calendar-halloween.png"
+      ],
+      "provenanceNote": "The public preview is generated from fictional events by scripts/render_readme.py."
+    },
+    "colorMeta": {
+      "red": {
+        "role": "primary",
+        "displayName": "Deep calendar red",
+        "tonalRamp": [
+          "oklch(15.00% 0.13841 19.68)",
+          "oklch(26.43% 0.13841 19.68)",
+          "oklch(37.86% 0.13841 19.68)",
+          "oklch(49.29% 0.13841 19.68)",
+          "oklch(60.71% 0.13841 19.68)",
+          "oklch(72.14% 0.13841 19.68)",
+          "oklch(83.57% 0.13841 19.68)",
+          "oklch(95.00% 0.13841 19.68)"
+        ]
+      },
+      "red-dark": {
+        "role": "primary",
+        "displayName": "Pressed red",
+        "tonalRamp": [
+          "oklch(15.00% 0.11008 18.64)",
+          "oklch(26.43% 0.11008 18.64)",
+          "oklch(37.86% 0.11008 18.64)",
+          "oklch(49.29% 0.11008 18.64)",
+          "oklch(60.71% 0.11008 18.64)",
+          "oklch(72.14% 0.11008 18.64)",
+          "oklch(83.57% 0.11008 18.64)",
+          "oklch(95.00% 0.11008 18.64)"
+        ]
+      },
+      "note-yellow": {
+        "role": "secondary",
+        "displayName": "E-paper yellow",
+        "tonalRamp": [
+          "oklch(15.00% 0.14937 88.77)",
+          "oklch(26.43% 0.14937 88.77)",
+          "oklch(37.86% 0.14937 88.77)",
+          "oklch(49.29% 0.14937 88.77)",
+          "oklch(60.71% 0.14937 88.77)",
+          "oklch(72.14% 0.14937 88.77)",
+          "oklch(83.57% 0.14937 88.77)",
+          "oklch(95.00% 0.14937 88.77)"
+        ]
+      },
+      "note-black": {
+        "role": "neutral",
+        "displayName": "Printed black",
+        "tonalRamp": [
+          "oklch(15.00% 0.00418 84.59)",
+          "oklch(26.43% 0.00418 84.59)",
+          "oklch(37.86% 0.00418 84.59)",
+          "oklch(49.29% 0.00418 84.59)",
+          "oklch(60.71% 0.00418 84.59)",
+          "oklch(72.14% 0.00418 84.59)",
+          "oklch(83.57% 0.00418 84.59)",
+          "oklch(95.00% 0.00418 84.59)"
+        ]
+      },
+      "note-paper": {
+        "role": "neutral",
+        "displayName": "E-paper cream",
+        "tonalRamp": [
+          "oklch(15.00% 0.01475 98.29)",
+          "oklch(26.43% 0.01475 98.29)",
+          "oklch(37.86% 0.01475 98.29)",
+          "oklch(49.29% 0.01475 98.29)",
+          "oklch(60.71% 0.01475 98.29)",
+          "oklch(72.14% 0.01475 98.29)",
+          "oklch(83.57% 0.01475 98.29)",
+          "oklch(95.00% 0.01475 98.29)"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Workspace paper",
+        "tonalRamp": [
+          "oklch(15.00% 0.00824 91.48)",
+          "oklch(26.43% 0.00824 91.48)",
+          "oklch(37.86% 0.00824 91.48)",
+          "oklch(49.29% 0.00824 91.48)",
+          "oklch(60.71% 0.00824 91.48)",
+          "oklch(72.14% 0.00824 91.48)",
+          "oklch(83.57% 0.00824 91.48)",
+          "oklch(95.00% 0.00824 91.48)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Browser ink",
+        "tonalRamp": [
+          "oklch(15.00% 0.00608 134.93)",
+          "oklch(26.43% 0.00608 134.93)",
+          "oklch(37.86% 0.00608 134.93)",
+          "oklch(49.29% 0.00608 134.93)",
+          "oklch(60.71% 0.00608 134.93)",
+          "oklch(72.14% 0.00608 134.93)",
+          "oklch(83.57% 0.00608 134.93)",
+          "oklch(95.00% 0.00608 134.93)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted ink",
+        "tonalRamp": [
+          "oklch(15.00% 0.01147 125.85)",
+          "oklch(26.43% 0.01147 125.85)",
+          "oklch(37.86% 0.01147 125.85)",
+          "oklch(49.29% 0.01147 125.85)",
+          "oklch(60.71% 0.01147 125.85)",
+          "oklch(72.14% 0.01147 125.85)",
+          "oklch(83.57% 0.01147 125.85)",
+          "oklch(95.00% 0.01147 125.85)"
+        ]
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Divider gray",
+        "tonalRamp": [
+          "oklch(15.00% 0.01484 106.70)",
+          "oklch(26.43% 0.01484 106.70)",
+          "oklch(37.86% 0.01484 106.70)",
+          "oklch(49.29% 0.01484 106.70)",
+          "oklch(60.71% 0.01484 106.70)",
+          "oklch(72.14% 0.01484 106.70)",
+          "oklch(83.57% 0.01484 106.70)",
+          "oklch(95.00% 0.01484 106.70)"
+        ]
+      },
+      "white": {
+        "role": "neutral",
+        "displayName": "Control white",
+        "tonalRamp": [
+          "oklch(15.00% 0.00666 97.35)",
+          "oklch(26.43% 0.00666 97.35)",
+          "oklch(37.86% 0.00666 97.35)",
+          "oklch(49.29% 0.00666 97.35)",
+          "oklch(60.71% 0.00666 97.35)",
+          "oklch(72.14% 0.00666 97.35)",
+          "oklch(83.57% 0.00666 97.35)",
+          "oklch(95.00% 0.00666 97.35)"
+        ]
+      },
+      "focus": {
+        "role": "secondary",
+        "displayName": "Focus ochre",
+        "tonalRamp": [
+          "oklch(15.00% 0.11282 64.78)",
+          "oklch(26.43% 0.11282 64.78)",
+          "oklch(37.86% 0.11282 64.78)",
+          "oklch(49.29% 0.11282 64.78)",
+          "oklch(60.71% 0.11282 64.78)",
+          "oklch(72.14% 0.11282 64.78)",
+          "oklch(83.57% 0.11282 64.78)",
+          "oklch(95.00% 0.11282 64.78)"
+        ]
+      },
+      "preview-case": {
+        "role": "neutral",
+        "displayName": "Case ivory",
+        "tonalRamp": [
+          "oklch(15.00% 0.00797 98.88)",
+          "oklch(26.43% 0.00797 98.88)",
+          "oklch(37.86% 0.00797 98.88)",
+          "oklch(49.29% 0.00797 98.88)",
+          "oklch(60.71% 0.00797 98.88)",
+          "oklch(72.14% 0.00797 98.88)",
+          "oklch(83.57% 0.00797 98.88)",
+          "oklch(95.00% 0.00797 98.88)"
+        ]
+      },
+      "secondary-border": {
+        "role": "neutral",
+        "displayName": "Secondary control outline",
+        "tonalRamp": [
+          "oklch(15.00% 0.01421 115.92)",
+          "oklch(26.43% 0.01421 115.92)",
+          "oklch(37.86% 0.01421 115.92)",
+          "oklch(49.29% 0.01421 115.92)",
+          "oklch(60.71% 0.01421 115.92)",
+          "oklch(72.14% 0.01421 115.92)",
+          "oklch(83.57% 0.01421 115.92)",
+          "oklch(95.00% 0.01421 115.92)"
+        ]
+      },
+      "secondary-hover": {
+        "role": "neutral",
+        "displayName": "Quiet hover paper",
+        "tonalRamp": [
+          "oklch(15.00% 0.01073 100.83)",
+          "oklch(26.43% 0.01073 100.83)",
+          "oklch(37.86% 0.01073 100.83)",
+          "oklch(49.29% 0.01073 100.83)",
+          "oklch(60.71% 0.01073 100.83)",
+          "oklch(72.14% 0.01073 100.83)",
+          "oklch(83.57% 0.01073 100.83)",
+          "oklch(95.00% 0.01073 100.83)"
+        ]
+      },
+      "field-border": {
+        "role": "neutral",
+        "displayName": "Field outline",
+        "tonalRamp": [
+          "oklch(15.00% 0.01562 115.14)",
+          "oklch(26.43% 0.01562 115.14)",
+          "oklch(37.86% 0.01562 115.14)",
+          "oklch(49.29% 0.01562 115.14)",
+          "oklch(60.71% 0.01562 115.14)",
+          "oklch(72.14% 0.01562 115.14)",
+          "oklch(83.57% 0.01562 115.14)",
+          "oklch(95.00% 0.01562 115.14)"
+        ]
+      },
+      "source-snapshot": {
+        "role": "secondary",
+        "displayName": "Snapshot amber",
+        "tonalRamp": [
+          "oklch(15.00% 0.10240 84.42)",
+          "oklch(26.43% 0.10240 84.42)",
+          "oklch(37.86% 0.10240 84.42)",
+          "oklch(49.29% 0.10240 84.42)",
+          "oklch(60.71% 0.10240 84.42)",
+          "oklch(72.14% 0.10240 84.42)",
+          "oklch(83.57% 0.10240 84.42)",
+          "oklch(95.00% 0.10240 84.42)"
+        ]
+      },
+      "source-live": {
+        "role": "secondary",
+        "displayName": "Live green",
+        "tonalRamp": [
+          "oklch(15.00% 0.09165 145.02)",
+          "oklch(26.43% 0.09165 145.02)",
+          "oklch(37.86% 0.09165 145.02)",
+          "oklch(49.29% 0.09165 145.02)",
+          "oklch(60.71% 0.09165 145.02)",
+          "oklch(72.14% 0.09165 145.02)",
+          "oklch(83.57% 0.09165 145.02)",
+          "oklch(95.00% 0.09165 145.02)"
+        ]
+      }
+    },
+    "tonalRampUsage": "The generated OKLCH ramps are documentation swatches only. They are not application tokens and must not expand the four-color native palette.",
+    "typographyMeta": {
+      "display": {
+        "displayName": "Native day number",
+        "purpose": "Carlito Bold at 64px, approximately 42px ink height."
+      },
+      "note-heading": {
+        "displayName": "Native date heading",
+        "purpose": "Carlito Bold at 14px for agenda dates; Regular at 14px for weekday and month/year."
+      },
+      "note-body": {
+        "displayName": "Native event text",
+        "purpose": "Carlito Bold at 14px. Event rows advance 14px; times use Regular 12px and holiday labels use Regular 13px."
+      },
+      "headline": {
+        "displayName": "Browser page headline",
+        "purpose": "Page heading. Changes to 27px at 1050px and 25px at 760px."
+      },
+      "title": {
+        "displayName": "Browser section title",
+        "purpose": "Control-rail headings."
+      },
+      "body": {
+        "displayName": "Browser body",
+        "purpose": "Base page typography with system sans-serif fallbacks."
+      },
+      "label": {
+        "displayName": "Browser control label",
+        "purpose": "Primary and secondary button labels."
+      },
+      "caption": {
+        "displayName": "Browser metadata",
+        "purpose": "Preview captions, supporting status, and fine print."
+      }
+    },
+    "shadows": [
+      {
+        "name": "device-surround",
+        "value": "0 12px 32px #383a3017, 0 2px 5px #383a301a",
+        "purpose": "Soft lift around the browser's device shell."
+      },
+      {
+        "name": "screen-edge",
+        "value": "0 0 0 1px #68685a55",
+        "purpose": "A faint edge around the preview image."
+      }
+    ],
+    "motion": [
+      {
+        "name": "button-state",
+        "value": "background .15s, color .15s",
+        "purpose": "Primary and secondary button state changes."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "transition: none !important; scroll-behavior: auto !important",
+        "purpose": "Applied when prefers-reduced-motion is reduce."
+      }
+    ],
+    "focus": {
+      "outline": "3px solid var(--focus)",
+      "outlineOffset": "4px",
+      "purpose": "Global visible keyboard focus."
+    },
+    "disabled": {
+      "opacity": 0.52,
+      "cursor": "wait",
+      "purpose": "Disabled buttons."
+    },
+    "breakpoints": [
+      {
+        "name": "wide-preview",
+        "value": "1400px",
+        "query": "min-width",
+        "behavior": "Fix the preview surround to 848px."
+      },
+      {
+        "name": "compact-desktop",
+        "value": "1050px",
+        "query": "max-width",
+        "behavior": "245px rail, 28px workspace gap, 18px surround inset, two-column settings."
+      },
+      {
+        "name": "stacked-workspace",
+        "value": "760px",
+        "query": "max-width",
+        "behavior": "Stack the workspace; two-column controls, one-column settings, 20px page inset, 13px surround inset."
+      },
+      {
+        "name": "single-column-controls",
+        "value": "430px",
+        "query": "max-width",
+        "behavior": "Use one column for controls."
+      }
+    ],
+    "nativeFrame": {
+      "dimensions": [
+        400,
+        300
+      ],
+      "imageMode": "P",
+      "bitsPerPixel": 2,
+      "packedByteLength": 30000,
+      "paletteIndices": {
+        "0": "colors.note-black",
+        "1": "colors.note-paper",
+        "2": "colors.note-yellow",
+        "3": "colors.red"
+      },
+      "nativeColorExportRgb": {
+        "0": [
+          0,
+          0,
+          0
+        ],
+        "1": [
+          255,
+          255,
+          255
+        ],
+        "2": [
+          255,
+          255,
+          0
+        ],
+        "3": [
+          255,
+          0,
+          0
+        ]
+      },
+      "sidebarWidth": 104,
+      "agenda": {
+        "origin": [
+          116,
+          14
+        ],
+        "textWidth": 274,
+        "bottomBoundary": 288,
+        "headingAdvance": 14,
+        "rowAdvance": 14,
+        "laterGroupGap": 5,
+        "groupAdmission": "A date heading and its first event must both fit.",
+        "timeColumnWidth": 52,
+        "titleWidth": 214,
+        "separatorWidth": 8,
+        "highlight": "Only the current date",
+        "badgePadding": [
+          4,
+          3
+        ],
+        "badgeCornerRadius": 3,
+        "dateFormat": "Weekday day month, no year"
+      },
+      "capacity": {
+        "busyFixture": 13,
+        "singleDate": 18,
+        "rule": "Capacity varies with date grouping. Real events continue across years until the screen is full.",
+        "separateDates": 8
+      },
+      "weekStrip": {
+        "origin": [
+          12,
+          112
+        ],
+        "columnStep": 12,
+        "maximumDotsPerDay": 3,
+        "progressBar": false,
+        "cellSize": [
+          12,
+          16
+        ],
+        "glyphAlignment": "Actual visible ink centered in the cell",
+        "cornerRadius": 2
+      },
+      "holiday": {
+        "spriteOrigin": [
+          4,
+          182
+        ],
+        "dateOrigin": [
+          12,
+          253
+        ],
+        "nameOrigin": [
+          12,
+          268
+        ],
+        "maximumNameLines": 2,
+        "nameWidth": 80
+      },
+      "scaling": "Nearest-neighbor; the evidence PNG is 2x (800 by 600).",
+      "contentConstraints": [
+        "Day and date replace week numbers.",
+        "No calendar name, account email, or Next holiday label on the Note.",
+        "Single-line event titles and 12-hour times.",
+        "One holiday, with its date independent from its artwork.",
+        "Only the actual current date has a rounded red badge.",
+        "All-day events omit time and use full agenda width.",
+        "Timed events separate time and title with an interpunct.",
+        "Date labels use weekday, day and month without year."
+      ]
+    },
+    "spriteArt": {
+      "source": "note_calendar/art.py",
+      "construction": "Original geometric pixel sprites.",
+      "grid": [
+        48,
+        32
+      ],
+      "output": [
+        96,
+        64
+      ],
+      "resampling": "Nearest-neighbor",
+      "variants": [
+        "diya",
+        "tree",
+        "moon",
+        "flag",
+        "harvest",
+        "sun",
+        "sparkle fallback"
+      ]
+    }
+  },
+  "components": [
+    {
+      "name": "Primary button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The main connection or refresh action.",
+      "html": "<button class=\"ds-primary\">Refresh calendar</button>",
+      "css": ".ds-primary{display:inline-flex;justify-content:center;align-items:center;text-decoration:none;border-radius:6px;min-height:42px;padding:9px 15px;font:600 13px/1.3 \"Segoe UI\",system-ui,sans-serif;cursor:pointer;transition:background .15s,color .15s;background:var(--red,#871f2b);color:var(--white,#fffef9);border:1px solid var(--red,#871f2b)}.ds-primary:hover{background:var(--red-dark,#681a23);border-color:var(--red-dark,#681a23)}.ds-primary:focus-visible{outline:3px solid var(--focus,#995d13);outline-offset:4px}.ds-primary:disabled{opacity:.52;cursor:wait}@media(prefers-reduced-motion:reduce){.ds-primary{transition:none}}"
+    },
+    {
+      "name": "Secondary button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "A supporting setup or save action.",
+      "html": "<button class=\"ds-secondary\">Show pairing details</button>",
+      "css": ".ds-secondary{display:inline-flex;justify-content:center;align-items:center;text-decoration:none;border-radius:6px;min-height:42px;padding:9px 15px;font:600 13px/1.3 \"Segoe UI\",system-ui,sans-serif;cursor:pointer;transition:background .15s,color .15s;background:transparent;color:var(--ink,#292b28);border:1px solid #aeb0a6}.ds-secondary:hover{background:#eae9e1}.ds-secondary:focus-visible{outline:3px solid var(--focus,#995d13);outline-offset:4px}.ds-secondary:disabled{opacity:.52;cursor:wait}@media(prefers-reduced-motion:reduce){.ds-secondary{transition:none}}"
+    },
+    {
+      "name": "Quiet button",
+      "kind": "button",
+      "refersTo": "button-quiet",
+      "description": "Low-emphasis disclosure and utility actions.",
+      "html": "<button class=\"ds-quiet\">Settings</button>",
+      "css": ".ds-quiet{background:none;border:0;color:var(--ink,#292b28);font:600 13px/1.55 \"Segoe UI\",system-ui,sans-serif;min-height:40px;padding:8px 12px;cursor:pointer}.ds-quiet:hover{color:var(--red,#871f2b)}.ds-quiet:focus-visible{outline:3px solid var(--focus,#995d13);outline-offset:4px}.ds-quiet:disabled{opacity:.52;cursor:wait}"
+    },
+    {
+      "name": "Labeled input",
+      "kind": "input",
+      "refersTo": "field",
+      "description": "A visible label and restrained field for controller preferences.",
+      "html": "<label class=\"ds-label\" for=\"ds-timezone\">Timezone<input class=\"ds-input\" id=\"ds-timezone\" value=\"America/Los_Angeles\"></label>",
+      "css": ".ds-label{display:block;font:600 12px/1.55 \"Segoe UI\",system-ui,sans-serif;color:var(--ink,#292b28);margin-top:18px}.ds-input{display:block;width:100%;min-height:41px;margin-top:6px;background:var(--white,#fffef9);border:1px solid #acaea3;border-radius:5px;padding:8px 10px;font:400 13px/1.55 \"Segoe UI\",system-ui,sans-serif;color:var(--ink,#292b28);caret-color:var(--red,#871f2b)}.ds-input::placeholder{color:#73766d}.ds-input:focus-visible{outline:3px solid var(--focus,#995d13);outline-offset:4px}"
+    },
+    {
+      "name": "Preview scale",
+      "kind": "custom",
+      "refersTo": "scale-selected",
+      "description": "A compact two-button scale selector; the pressed state is dark.",
+      "html": "<div class=\"ds-scale\" role=\"group\" aria-label=\"Preview scale\"><button aria-pressed=\"false\">1x</button><button aria-pressed=\"true\">2x</button></div>",
+      "css": ".ds-scale{display:flex;gap:3px}.ds-scale button{background:none;border:0;color:var(--ink,#292b28);font:600 13px/1.55 \"Segoe UI\",system-ui,sans-serif;min-width:36px;min-height:34px;padding:4px 6px;cursor:pointer}.ds-scale button:hover{color:var(--red,#871f2b)}.ds-scale [aria-pressed=true]{background:var(--ink,#292b28);color:var(--white,#fffef9);border-radius:4px}.ds-scale [aria-pressed=true]:hover{color:var(--white,#fffef9)}.ds-scale button:focus-visible{outline:3px solid var(--focus,#995d13);outline-offset:4px}"
+    },
+    {
+      "name": "Source status",
+      "kind": "custom",
+      "description": "A small status dot paired with explicit source text.",
+      "html": "<div class=\"ds-source\"><span class=\"ds-source-dot\" aria-hidden=\"true\"></span><span>Saved calendar snapshot</span></div>",
+      "css": ".ds-source{font:400 13px/1.55 \"Segoe UI\",system-ui,sans-serif;color:var(--ink,#292b28);display:flex;align-items:center;gap:8px;white-space:nowrap}.ds-source-dot{height:7px;width:7px;background:#9b792c;border-radius:50%}.ds-source.ds-live .ds-source-dot{background:#487a4a}"
+    },
+    {
+      "name": "Device surround",
+      "kind": "card",
+      "refersTo": "preview-frame",
+      "description": "The browser shell around the native image. This sample shows the shell only; the real agenda is generated by the four-color renderer.",
+      "html": "<div class=\"ds-device\"><div class=\"ds-screen\" role=\"img\" aria-label=\"Empty preview surface\"></div></div>",
+      "css": ".ds-device{width:100%;max-width:848px;padding:24px;background:#fdfcf6;border-radius:22px;box-shadow:0 12px 32px #383a3017,0 2px 5px #383a301a}.ds-screen{width:100%;aspect-ratio:4/3;background:#f1efe4;border-radius:9px;box-shadow:0 0 0 1px #68685a55}@media(max-width:1050px){.ds-device{padding:18px}}@media(max-width:760px){.ds-device{padding:13px;border-radius:17px}.ds-screen{border-radius:6px}}"
+    },
+    {
+      "name": "Masthead",
+      "kind": "nav",
+      "description": "Home identity, controller context, and the settings disclosure.",
+      "html": "<header class=\"ds-masthead\"><a class=\"ds-wordmark\" href=\"#home\"><span class=\"ds-mark\" aria-hidden=\"true\"></span>Note calendar</a><span class=\"ds-host\">Your Raspberry Pi controller</span><button class=\"ds-settings\" aria-expanded=\"false\">Settings</button></header>",
+      "css": ".ds-masthead{height:86px;display:flex;align-items:center;gap:24px;max-width:1328px;padding:0 36px;border-bottom:1px solid var(--rule,#d9d9ce);font-family:\"Segoe UI\",system-ui,sans-serif}.ds-wordmark{display:inline-flex;align-items:center;gap:11px;color:var(--ink,#292b28);text-decoration:none;font-size:19px;font-weight:650;letter-spacing:-.03em}.ds-mark{width:22px;height:26px;background:linear-gradient(to right,var(--red,#871f2b) 0 7px,var(--white,#fffef9) 7px);border:1px solid var(--red,#871f2b);border-radius:3px}.ds-host{font-size:13px;color:var(--muted,#63665f);margin-left:auto}.ds-settings{background:none;border:0;color:var(--ink,#292b28);font:600 13px/1.55 \"Segoe UI\",system-ui,sans-serif;min-height:40px;padding:8px 0 8px 12px;cursor:pointer}.ds-settings:hover{color:var(--red,#871f2b)}.ds-settings:focus-visible{outline:3px solid var(--focus,#995d13);outline-offset:4px}.ds-wordmark:focus-visible{outline:3px solid var(--focus,#995d13);outline-offset:4px}@media(max-width:760px){.ds-masthead{padding:0 22px;height:72px;gap:12px}.ds-host{display:none}.ds-settings{margin-left:auto}}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The supplied desk calendar",
+    "overview": "The user's original photograph is the visual authority: a warm paper field, a deep red sidebar, compact proportional sans-serif lettering, a small week strip, and a holiday illustration. This document records the implemented system in render.py, typography.py, art.py, index.html, and app.css. It does not establish a separate generated comp or direction seed.\n\nThe Note output is a dense, glanceable pixel composition. The browser companion supports inspecting that output, reading displayed events, connecting a calendar, and managing the device. Its quiet system typography and restrained controls keep attention on the calendar preview.",
+    "keyCharacteristics": [
+      "A fixed four-color native frame with a strong red date-and-holiday sidebar.",
+      "Native proportional sans-serif lettering, single-line events, and date groups that consume available height.",
+      "Original geometric holiday sprites with deliberately visible pixel edges.",
+      "A warm, responsive browser workspace with an accessible text equivalent of the preview."
+    ],
+    "rules": [
+      {
+        "name": "The Reference Rule",
+        "body": "Preserve the supplied photograph's compact visual language while honoring the user's explicit content changes.",
+        "section": "overview"
+      },
+      {
+        "name": "The Four Inks Rule",
+        "body": "Native pixels use only palette indices 0 through 3: black, white, yellow, and red. The frame is an indexed image, not an antialiased RGB illustration. The native-color PNG option substitutes pure device colors; the binary frame preserves those same index meanings.",
+        "section": "colors"
+      },
+      {
+        "name": "The Native Pixels Rule",
+        "body": "Preserve glyph edges with integer pixel drawing and nearest-neighbor enlargement. Keep event titles on one line. The renderer fits long text to the available width with three periods and normalizes unsupported characters.",
+        "section": "typography"
+      },
+      {
+        "name": "The Available Height Rule",
+        "body": "Fill the agenda according to the space occupied by real date groups and rows. Do not reserve blank weeks or assume a fixed event count.",
+        "section": "layout"
+      },
+      {
+        "name": "The Device Surround Rule",
+        "body": "Use the existing preview shell's shadows to distinguish the displayed object from its page. Do not add those shadows to agenda groups or control sections.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do preserve the original photograph's red sidebar, paper agenda, proportional sans-serif lettering, and small holiday illustration.",
+      "Do render the Note frame at 400 by 300 indexed pixels and use nearest-neighbor enlargement.",
+      "Do use day and date, single-line events, 12-hour times, and a rounded red badge only for today.",
+      "Do let event capacity follow the actual date groups and available height.",
+      "Do keep one holiday in the sidebar, with its date independent from its artwork.",
+      "Do keep browser source state explicit and pair the preview with readable event text.",
+      "Do preserve visible focus, labeled controls, and reduced-motion behavior."
+    ],
+    "donts": [
+      "Don't put week numbers, a calendar name, an account email, or a \"Next holiday\" label on the Note screen.",
+      "Don't antialias native text, blur enlarged pixels, or introduce colors outside the four native indices.",
+      "Don't turn the busy fixture's 12 displayed events into a fixed product capacity.",
+      "Don't stretch the native frame or reflow its agenda at browser breakpoints.",
+      "Don't treat a screenshot or documentation label as a new approved visual comp.",
+      "Don't use em dashes in product copy or project documentation."
+    ]
+  }
+}

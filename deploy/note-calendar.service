@@ -1,0 +1,26 @@
+[Unit]
+Description=Note calendar controller
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+# Replace the example user, checkout path and Pi address before installing.
+User=pi
+WorkingDirectory=/home/pi/zectrix
+Environment=NOTE_DATA_DIR=/home/pi/zectrix/.data
+Environment=NOTE_DEVICE_URL=http://192.168.1.100:29174
+# Uncomment for service account access; leave unset for Desktop OAuth.
+#Environment=NOTE_GOOGLE_SERVICE_ACCOUNT_FILE=/home/pi/zectrix/.data/google-service-account.json
+ExecStart=/home/pi/zectrix/.venv/bin/python -m note_calendar.app --host 0.0.0.0 --port 29174
+Restart=on-failure
+RestartSec=10
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=read-only
+ReadWritePaths=/home/pi/zectrix/.data
+
+[Install]
+WantedBy=multi-user.target

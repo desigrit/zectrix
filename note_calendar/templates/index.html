@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="csrf-token" content="{{ csrf }}">
+  <meta name="app-base" content="{{ request.script_root }}">
+  <title>Note calendar</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="{{ url_for('static', filename='app.css') }}">
+  {% if embedded %}<link rel="stylesheet" href="{{ url_for('static', filename='hub.css') }}">{% endif %}
+  <script src="{{ url_for('static', filename='app.js') }}" defer></script>
+</head>
+<body{% if embedded %} class="hub-embedded"{% endif %}>
+  <header class="masthead">
+    {% if embedded %}
+    <h2>Note 4c display</h2>
+    <div class="source-state"><span class="state-dot" aria-hidden="true"></span><span id="source-label">Loading calendar</span></div>
+    {% else %}
+    <a class="wordmark" href="{{ url_for('index') }}" aria-label="Note calendar home"><span class="mark" aria-hidden="true"></span>Note calendar</a>
+    <span class="host-label">Your Raspberry Pi controller</span>
+    {% endif %}
+    <button id="settings-toggle" class="quiet" aria-expanded="false" aria-controls="settings">Settings</button>
+  </header>
+  <main>
+    {% if not embedded %}
+    {% if request.script_root %}<p class="hub-return"><a href="/">Back to ESL Hub</a></p>{% endif %}
+    <div class="page-heading">
+      <div><h1>A little more of your day.</h1><p>Your calendar, made for the Note.</p></div>
+      <div class="source-state"><span class="state-dot" aria-hidden="true"></span><span id="source-label">Loading calendar</span></div>
+    </div>
+    {% endif %}
+    <div id="notice" class="notice" role="status" aria-live="polite" hidden></div>
+    <div class="workspace">
+      <section class="preview-area" aria-label="Note display preview">
+        <div class="preview-toolbar">
+          <label for="mode">Preview <select id="mode"><option value="calendar">Your calendar</option><option value="busy">Busy example</option><option value="sparse">Quiet example</option><option value="empty">Empty example</option></select></label>
+          <div class="scale-control" role="group" aria-label="Preview scale"><button id="scale-one" class="quiet" aria-pressed="false">1x</button><button id="scale-two" class="quiet" aria-pressed="true">2x</button></div>
+        </div>
+        <div id="device-frame" class="device-frame">
+          <img id="screen" src="{{ url_for('frame_png') }}" width="400" height="300" alt="Calendar display preview. An accessible event list follows below." draggable="false">
+        </div>
+        <div class="preview-caption"><span id="preview-detail">400 × 300 pixels · four colors</span><span id="example-label" hidden>Illustrative events</span></div>
+        <details class="event-details"><summary>Read displayed events <span id="event-count"></span></summary><ol id="event-list"></ol></details>
+      </section>
+      <aside class="controls" aria-label="Calendar and device status">
+        <section class="control-section"><h2>Made to glance at</h2><p>A compact agenda, today's date, and one holiday. Events fill the screen as space allows.</p><dl><div><dt>Calendar</dt><dd id="shown-count">Loading</dd></div><div><dt>Holiday</dt><dd id="holiday-label">Loading</dd></div><div><dt>Timezone</dt><dd id="timezone-label">Pacific</dd></div></dl></section>
+        <section class="control-section"><h2>One daily update</h2><p class="schedule">Midnight · 12 AM</p><p>The Note updates once a day at midnight, then sleeps until the next day.</p><p class="fine" id="next-update"></p></section>
+        <section class="control-section"><h2 id="connection-heading">Calendar snapshot</h2><p id="connection-description">Loading connection details.</p><button id="refresh" class="primary">Refresh calendar</button><p id="last-fetched" class="fine"></p></section>
+        <section class="control-section"><h2>Your Note</h2><p id="device-status">Finish USB and Wi-Fi setup to connect your display.</p><button id="pair-toggle" class="secondary" aria-expanded="false" aria-controls="pairing">Show pairing details</button><div id="pairing" hidden><p class="fine">Use these in the Note's setup page.</p><label>Controller address<input id="pair-url" readonly></label><label>Device key<input id="pair-key" type="password" readonly></label><button id="copy-key" class="quiet">Copy device key</button></div></section>
+        <div class="downloads"><a id="download-png" href="{{ url_for('frame_png', native=1, download=1) }}">Download PNG</a><a id="download-bin" href="{{ url_for('frame_bin') }}">Download device file</a></div>
+      </aside>
+    </div>
+    <section id="settings" class="settings" hidden aria-label="Controller settings">
+      <div class="settings-heading"><h2>Controller settings</h2><button id="settings-close" class="quiet">Close settings</button></div>
+      <div class="settings-columns">
+        <section id="google-managed" hidden><h3>Google Calendar connection</h3><p id="google-managed-description">This connection is managed on the Pi.</p><p class="fine">Changes are fetched once a day at midnight in your selected timezone.</p></section>
+        <form id="google-form"><h3>Connect Google Calendar</h3><p>Automatic updates need a Google Desktop OAuth client. Calendar access is read-only.</p><ol class="setup-steps"><li>In Google Cloud, enable the Calendar API and configure the consent screen.</li><li>Create an OAuth client for a <strong>Desktop app</strong>, then download its JSON file.</li><li>Choose the file below and connect the account that can read your calendar.</li></ol><a href="https://developers.google.com/workspace/guides/create-credentials#desktop-app" target="_blank" rel="noreferrer">Google's setup instructions</a><label for="google-file">Desktop client JSON<input id="google-file" name="file" type="file" accept=".json,application/json" required></label><button type="submit" class="secondary">Save Google client</button><a id="connect-google"{% if embedded %} target="_top"{% endif %} class="button primary" href="{{ url_for('google_start') }}">Connect Google Calendar</a><p class="fine">{% if request.script_root %}Google sign-in opens on this computer through its SSH tunnel at 127.0.0.1:29176. {% endif %}The existing snapshot stays available until the first live refresh succeeds. Google test-mode access may expire after seven days.</p></form>
+        <form id="preferences-form"><h3>Calendar preferences</h3><label for="calendar-id">Google calendar ID<input id="calendar-id" required autocomplete="off"></label><label for="timezone">Timezone<input id="timezone" required value="America/Los_Angeles" list="timezones"></label><datalist id="timezones"><option value="America/Los_Angeles"><option value="America/New_York"><option value="Asia/Kolkata"><option value="Europe/London"></datalist><p class="fine">The daily midnight update follows this timezone, including daylight saving changes.</p><button type="submit" class="secondary">Save preferences</button><h3>Holiday selection</h3><p>US federal holidays, including observed dates, plus a curated selection from Holidays in India.</p><details><summary>Included Indian holidays</summary><p>Republic Day, Pongal, Sankranti, Maha Shivaratri, Holi, Ram Navami, Vaisakhi, Eid al-Fitr, Eid al-Adha, Independence Day, Raksha Bandhan, Janmashtami, Ganesh Chaturthi, Onam, Gandhi Jayanti, Dussehra, Diwali, Guru Nanak Jayanti and Christmas.</p></details><p id="holiday-coverage" class="fine"></p></form>
+        <form id="legacy-form"><h3>Reference firmware upload</h3><p>Optional: send an image to a Note already running the reference gallery firmware. The battery calendar firmware pulls images automatically.</p><label for="device-url">Note's local IP address<input id="device-url" placeholder="192.168.1.42" autocomplete="off"></label><button type="submit" class="secondary">Save address</button><div class="button-row"><button id="check-device" class="quiet" type="button">Check connection</button><button id="send-device" class="quiet" type="button">Send calendar now</button></div><p class="fine">This sends your calendar only. Example views are available as downloads.</p></form>
+      </div>
+    </section>
+  </main>
+  <footer><span>Designed for the Note 4c</span><span>Same pixels in the preview and on your display. Ink colors are approximate.</span></footer>
+</body>
+</html>

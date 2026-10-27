@@ -1,0 +1,27 @@
+:root{color-scheme:dark;--paper:#0d1117;--ink:#e6edf3;--muted:#a8b2bd;--rule:#30363d;--red:#8ec5ff;--red-dark:#2f81f7;--white:#f0f6fc;--focus:#79c0ff}
+.hub-embedded .masthead{max-width:none;margin:0;padding:16px 20px;height:auto;min-height:64px;background:#161b22;border:1px solid var(--rule);border-radius:6px;gap:20px;flex-wrap:wrap}
+.hub-embedded .masthead h2{font-size:16px;margin:0;margin-right:auto}
+.hub-embedded .masthead .source-state{font-size:12px}
+.hub-embedded .masthead .quiet{padding:8px 12px;border:1px solid #59636e;border-radius:5px;min-height:40px}
+.hub-embedded .source-state .state-dot{background:#d6b35a}
+.hub-embedded .source-state.live .state-dot{background:#56d364}
+.hub-embedded main{max-width:none;padding:22px 0 4px}
+.hub-embedded .workspace{grid-template-columns:minmax(0,1fr) minmax(245px,300px);gap:32px}
+.hub-embedded .device-frame{width:100%;max-width:848px;background:#21262d;box-shadow:none;border:1px solid #30363d;border-radius:12px;padding:18px}
+.hub-embedded .device-frame.actual-size{max-width:438px}
+.hub-embedded .device-frame img{box-shadow:none;border-radius:4px}
+.hub-embedded .primary{background:#1f6feb;border-color:#1f6feb;color:#fff}
+.hub-embedded .primary:hover{background:#388bfd;border-color:#388bfd}
+.hub-embedded .secondary{border-color:#68727e}
+.hub-embedded .secondary:hover{background:#21262d}
+.hub-embedded .quiet:hover{color:#b6d9ff}
+.hub-embedded .scale-control [aria-pressed=true]{background:#e6edf3;color:#0d1117}
+.hub-embedded .scale-control [aria-pressed=true]:hover{color:#0d1117}
+.hub-embedded input{background:#161b22;border-color:#68727e;color:var(--ink)}
+.hub-embedded input::placeholder{color:#a8b2bd}
+.hub-embedded input::file-selector-button{background:#30363d;color:#e6edf3}
+.hub-embedded .notice{background:#302a1a;color:#efcf8b;border-color:#68562c}
+.hub-embedded .notice.error{background:#321d23;color:#ffb2ba;border-color:#78424c}
+.hub-embedded footer{display:none}
+.hub-embedded ::selection{background:#264b78;color:#fff}
+@media(max-width:760px){.hub-embedded .masthead{padding:12px 14px;gap:10px}.hub-embedded .masthead h2{font-size:15px}.hub-embedded .masthead .source-state{order:3;flex-basis:100%}.hub-embedded .masthead button{margin-left:0}.hub-embedded main{padding:18px 0 4px}.hub-embedded .workspace{display:block}.hub-embedded .device-frame{padding:12px}}

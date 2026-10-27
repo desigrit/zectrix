@@ -1,0 +1,520 @@
+{
+  "source": "Google Calendar: Holidays in India",
+  "source_id": "en.indian#holiday@group.v.calendar.google.com",
+  "fetched_at": "2026-10-27T03:24:53+00:00",
+  "coverage_start": "2026-10-26",
+  "coverage_end": "2027-12-31",
+  "events": [
+    {
+      "id": "20261026_dpgstdjm2kua0c3ti4aqmnctbo",
+      "summary": "Maharishi Valmiki Jayanti",
+      "start": {
+        "date": "2026-10-26"
+      }
+    },
+    {
+      "id": "20261029_du0vmm1a7d862bc71ro9a82uqc",
+      "summary": "Karaka Chaturthi",
+      "start": {
+        "date": "2026-10-29"
+      }
+    },
+    {
+      "id": "20261108_o3aevviv105saebf47ptcda14o",
+      "summary": "Diwali/Deepavali",
+      "start": {
+        "date": "2026-11-08"
+      }
+    },
+    {
+      "id": "20261108_sj6r4c25h02j6iuvqms4907fmo",
+      "summary": "Naraka Chaturdasi",
+      "start": {
+        "date": "2026-11-08"
+      }
+    },
+    {
+      "id": "20261109_9ucn1jr1v0qkbmh1p31aka5qag",
+      "summary": "Govardhan Puja",
+      "start": {
+        "date": "2026-11-09"
+      }
+    },
+    {
+      "id": "20261111_lem4nlhmh9ka68hh6m99dopvc8",
+      "summary": "Bhai Duj",
+      "start": {
+        "date": "2026-11-11"
+      }
+    },
+    {
+      "id": "20261115_8065pjqbbhi1kmd7493liod1ag",
+      "summary": "Chhat Puja (Pratihar Sashthi/Surya Sashthi)",
+      "start": {
+        "date": "2026-11-15"
+      }
+    },
+    {
+      "id": "20261124_njcklmiqk3v344nv88r1mo6ink",
+      "summary": "Guru Nanak Jayanti",
+      "start": {
+        "date": "2026-11-24"
+      }
+    },
+    {
+      "id": "20261124_pv7p2h23ej6ekau6c5hc4688t8",
+      "summary": "Guru Tegh Bahadur's Martyrdom Day",
+      "start": {
+        "date": "2026-11-24"
+      }
+    },
+    {
+      "id": "20261223_qaarbvg90v76dead87qu17kob4",
+      "summary": "Hazarat Ali's Birthday",
+      "start": {
+        "date": "2026-12-23"
+      }
+    },
+    {
+      "id": "20261224_neqbcde26rglcalt462982nqi0",
+      "summary": "Christmas Eve",
+      "start": {
+        "date": "2026-12-24"
+      }
+    },
+    {
+      "id": "20261225_j7t84gf437vtue4ck75hvd56l0",
+      "summary": "Christmas",
+      "start": {
+        "date": "2026-12-25"
+      }
+    },
+    {
+      "id": "20270101_p8d44frnphvj5avi6l2qrov1ns",
+      "summary": "New Year's Day",
+      "start": {
+        "date": "2027-01-01"
+      }
+    },
+    {
+      "id": "20270114_snhpa8ap72ls6h72daor31osu4",
+      "summary": "Makar Sankranti",
+      "start": {
+        "date": "2027-01-14"
+      }
+    },
+    {
+      "id": "20270115_9a1onrqb772qv45gcvnpsqu4n8",
+      "summary": "Pongal",
+      "start": {
+        "date": "2027-01-15"
+      }
+    },
+    {
+      "id": "20270115_ajj4ih6m3q3nun9d3f60m41qr4",
+      "summary": "Guru Govind Singh Jayanti",
+      "start": {
+        "date": "2027-01-15"
+      }
+    },
+    {
+      "id": "20270126_3ueccaeqtpio3llclsnnb33974",
+      "summary": "Republic Day",
+      "start": {
+        "date": "2027-01-26"
+      }
+    },
+    {
+      "id": "20270209_aahi2e9puucb8ul8rps6555r00",
+      "summary": "Ramadan Start (tentative)",
+      "start": {
+        "date": "2027-02-09"
+      }
+    },
+    {
+      "id": "20270211_kl0ecbgk48end4m29v4r25b6bo",
+      "summary": "Vasant Panchami",
+      "start": {
+        "date": "2027-02-11"
+      }
+    },
+    {
+      "id": "20270219_rnr5nqkt9mtea6h7f84nltrum0",
+      "summary": "Shivaji Jayanti",
+      "start": {
+        "date": "2027-02-19"
+      }
+    },
+    {
+      "id": "20270220_19166gseag7oph9nsl5v21snl4",
+      "summary": "Guru Ravidas Jayanti",
+      "start": {
+        "date": "2027-02-20"
+      }
+    },
+    {
+      "id": "20270302_rn894artda84k4m9e69p2mki34",
+      "summary": "Maharishi Dayanand Saraswati Jayanti",
+      "start": {
+        "date": "2027-03-02"
+      }
+    },
+    {
+      "id": "20270305_vv39k149efm9ccns0onpoqtfb0",
+      "summary": "Jamat Ul-Vida",
+      "start": {
+        "date": "2027-03-05"
+      }
+    },
+    {
+      "id": "20270306_258lkpk94le407aeusjmphgikc",
+      "summary": "Maha Shivaratri",
+      "start": {
+        "date": "2027-03-06"
+      }
+    },
+    {
+      "id": "20270310_2h899vh3h8hdotv5gea8gerksk",
+      "summary": "Ramzan Id (tentative)",
+      "start": {
+        "date": "2027-03-10"
+      }
+    },
+    {
+      "id": "20270322_9202renvgjrsaji3cv7n067a8g",
+      "summary": "Holika Dahana",
+      "start": {
+        "date": "2027-03-22"
+      }
+    },
+    {
+      "id": "20270322_bhvcbk1j35t8h6puqfjgo2hur4",
+      "summary": "Dolyatra",
+      "start": {
+        "date": "2027-03-22"
+      }
+    },
+    {
+      "id": "20270322_keu32sqpm0ak2d82bo6grqe3pc",
+      "summary": "Holi",
+      "start": {
+        "date": "2027-03-22"
+      }
+    },
+    {
+      "id": "20270326_9qji2l8o2g5qh4a8ma1jr9ifvs",
+      "summary": "Good Friday",
+      "start": {
+        "date": "2027-03-26"
+      }
+    },
+    {
+      "id": "20270407_0niv7s3g935532uc814dutiufk",
+      "summary": "Ugadi",
+      "start": {
+        "date": "2027-04-07"
+      }
+    },
+    {
+      "id": "20270407_6bpid36leuifhsqbeffreilct4",
+      "summary": "Gudi Padwa",
+      "start": {
+        "date": "2027-04-07"
+      }
+    },
+    {
+      "id": "20270407_7jk58h1suvnqpdl52rci7ok2qo",
+      "summary": "Chaitra Sukhladi",
+      "start": {
+        "date": "2027-04-07"
+      }
+    },
+    {
+      "id": "20270407_qopgvj9gn1sh1c836nlga0jbp8",
+      "summary": "Cheti Chand",
+      "start": {
+        "date": "2027-04-07"
+      }
+    },
+    {
+      "id": "20270414_0vb77q67hmdtrodjglsdfvg8f0",
+      "summary": "Vishu",
+      "start": {
+        "date": "2027-04-14"
+      }
+    },
+    {
+      "id": "20270414_9uitr4s5kiavjvj3r3h3n98nq8",
+      "summary": "Ambedkar Jayanti",
+      "start": {
+        "date": "2027-04-14"
+      }
+    },
+    {
+      "id": "20270414_lq3f1s8bnrhui1tahq4rodkmlk",
+      "summary": "Mesadi",
+      "start": {
+        "date": "2027-04-14"
+      }
+    },
+    {
+      "id": "20270414_qv4a4ivevb4cgh4mfrudjmiegg",
+      "summary": "Vaisakhi",
+      "start": {
+        "date": "2027-04-14"
+      }
+    },
+    {
+      "id": "20270415_a2ro6eu1pen4bc8t8t0ep46gfc",
+      "summary": "Bahag Bihu (Assam)",
+      "start": {
+        "date": "2027-04-15"
+      }
+    },
+    {
+      "id": "20270415_kuegg11i8r96f2hu4henobopa0",
+      "summary": "Vaisakhadi (Bengal)",
+      "start": {
+        "date": "2027-04-15"
+      }
+    },
+    {
+      "id": "20270415_rbgf7u7h9obbudbgej9rh3bmt0",
+      "summary": "Rama Navami",
+      "start": {
+        "date": "2027-04-15"
+      }
+    },
+    {
+      "id": "20270419_bq8ncrdckjm5ib3i94bbsgcb38",
+      "summary": "Mahavir Jayanti",
+      "start": {
+        "date": "2027-04-19"
+      }
+    },
+    {
+      "id": "20270509_58hasc8lupe4lmk7a1ksit369g",
+      "summary": "Birthday of Rabindranath",
+      "start": {
+        "date": "2027-05-09"
+      }
+    },
+    {
+      "id": "20270517_p71ep4ru9258ap90ok6blfjcd0",
+      "summary": "Bakrid (tentative)",
+      "start": {
+        "date": "2027-05-17"
+      }
+    },
+    {
+      "id": "20270520_fcnvkqkqeuhcetej6e69pddrt4",
+      "summary": "Buddha Purnima",
+      "start": {
+        "date": "2027-05-20"
+      }
+    },
+    {
+      "id": "20270616_3k20sckpm0fo1jsd9jrmh5ljj4",
+      "summary": "Muharram/Ashura (tentative)",
+      "start": {
+        "date": "2027-06-16"
+      }
+    },
+    {
+      "id": "20270705_ja2qu57j44l38sfotieg8qse9g",
+      "summary": "Rath Yatra",
+      "start": {
+        "date": "2027-07-05"
+      }
+    },
+    {
+      "id": "20270815_01iktqf34vt12bbkh3v262u4h0",
+      "summary": "Independence Day",
+      "start": {
+        "date": "2027-08-15"
+      }
+    },
+    {
+      "id": "20270815_dace38sqe2m3mt6hdtqmsihefo",
+      "summary": "Milad un-Nabi (tentative)",
+      "start": {
+        "date": "2027-08-15"
+      }
+    },
+    {
+      "id": "20270815_nste5u55tjur92ui2pc2m31j6o",
+      "summary": "Parsi New Year",
+      "start": {
+        "date": "2027-08-15"
+      }
+    },
+    {
+      "id": "20270817_0tnupge6d0358ai87ab0rtkqhs",
+      "summary": "Raksha Bandhan",
+      "start": {
+        "date": "2027-08-17"
+      }
+    },
+    {
+      "id": "20270825_j4hh5dcksa8dqf9lefv1q2qa80",
+      "summary": "Janmashtami (Smarta)",
+      "start": {
+        "date": "2027-08-25"
+      }
+    },
+    {
+      "id": "20270825_ub6b3rnk405v8se9noliu2l1k4",
+      "summary": "Janmashtami",
+      "start": {
+        "date": "2027-08-25"
+      }
+    },
+    {
+      "id": "20270904_dbi4mlsmqh4a1u46bksp8jd5e4",
+      "summary": "Ganesh Chaturthi",
+      "start": {
+        "date": "2027-09-04"
+      }
+    },
+    {
+      "id": "20270912_gavst6g6pppj2prjgkd26hj0ec",
+      "summary": "Onam",
+      "start": {
+        "date": "2027-09-12"
+      }
+    },
+    {
+      "id": "20270930_5jd494lr8leai8a9cueg5ojjvc",
+      "summary": "First Day of Sharad Navratri",
+      "start": {
+        "date": "2027-09-30"
+      }
+    },
+    {
+      "id": "20271002_2edlo6uiucadokae2c25555r8o",
+      "summary": "Mahatma Gandhi Jayanti",
+      "start": {
+        "date": "2027-10-02"
+      }
+    },
+    {
+      "id": "20271005_9gp1dcupvmeuj74bj16n1lnej8",
+      "summary": "First Day of Durga Puja Festivities",
+      "start": {
+        "date": "2027-10-05"
+      }
+    },
+    {
+      "id": "20271006_1ibvlakql313kcollmhd65jpm0",
+      "summary": "Maha Saptami",
+      "start": {
+        "date": "2027-10-06"
+      }
+    },
+    {
+      "id": "20271007_7qisil1fgfeb1085n659su1eik",
+      "summary": "Maha Ashtami",
+      "start": {
+        "date": "2027-10-07"
+      }
+    },
+    {
+      "id": "20271008_jjgvidc6lht016o4o81rm4un0g",
+      "summary": "Maha Navami",
+      "start": {
+        "date": "2027-10-08"
+      }
+    },
+    {
+      "id": "20271009_4jacl7im6kltp8ab19baeeq290",
+      "summary": "Dussehra",
+      "start": {
+        "date": "2027-10-09"
+      }
+    },
+    {
+      "id": "20271015_cm76crgv19lk1slss2vlv9fa2c",
+      "summary": "Maharishi Valmiki Jayanti",
+      "start": {
+        "date": "2027-10-15"
+      }
+    },
+    {
+      "id": "20271018_qv18b6b55guqqi8mdjhgqn13ao",
+      "summary": "Karaka Chaturthi",
+      "start": {
+        "date": "2027-10-18"
+      }
+    },
+    {
+      "id": "20271028_8qb29soksr2qfi1p4gmj0ku5jk",
+      "summary": "Naraka Chaturdasi",
+      "start": {
+        "date": "2027-10-28"
+      }
+    },
+    {
+      "id": "20271029_miv6ljqld90fb4eb26v2sh8cb4",
+      "summary": "Diwali/Deepavali",
+      "start": {
+        "date": "2027-10-29"
+      }
+    },
+    {
+      "id": "20271030_d70d4gvl3h4pge5210qus66cio",
+      "summary": "Govardhan Puja",
+      "start": {
+        "date": "2027-10-30"
+      }
+    },
+    {
+      "id": "20271031_dj8l166pq2kv7r7lcj2tgic5qk",
+      "summary": "Bhai Duj",
+      "start": {
+        "date": "2027-10-31"
+      }
+    },
+    {
+      "id": "20271104_fdedn5ue5pokoca9hdmol5kvnk",
+      "summary": "Chhat Puja (Pratihar Sashthi/Surya Sashthi)",
+      "start": {
+        "date": "2027-11-04"
+      }
+    },
+    {
+      "id": "20271114_0rtt76jatrbaqhqqpivj71o0cg",
+      "summary": "Guru Nanak Jayanti",
+      "start": {
+        "date": "2027-11-14"
+      }
+    },
+    {
+      "id": "20271124_1kdmmhks17fu60go8rb4ktq1ho",
+      "summary": "Guru Tegh Bahadur's Martyrdom Day",
+      "start": {
+        "date": "2027-11-24"
+      }
+    },
+    {
+      "id": "20271212_2b6qm4v8t1khddpoj67qgu35i4",
+      "summary": "Hazarat Ali's Birthday",
+      "start": {
+        "date": "2027-12-12"
+      }
+    },
+    {
+      "id": "20271224_s7i0dkeltlg4c5n8137ctvt0h0",
+      "summary": "Christmas Eve",
+      "start": {
+        "date": "2027-12-24"
+      }
+    },
+    {
+      "id": "20271225_0rk55qdea39ch026q5cgjosf9o",
+      "summary": "Christmas",
+      "start": {
+        "date": "2027-12-25"
+      }
+    }
+  ]
+}
