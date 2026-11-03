@@ -58,17 +58,52 @@ def test_live_fetch_reads_selected_calendar_and_preserves_all_day_dates(tmp_path
     calls = []
 
     def fetch(session, calendar_id, start, **kwargs):
-        calls.append((calendar_id, kwargs))
+        calls.append((calendar_id, kwargs, start))
         return [all_day] if calendar_id == selected else []
 
     monkeypatch.setattr(google, "list_events", fetch)
     cache, holidays, error = google.fetch(selected, now)
     assert [call[0] for call in calls] == [selected, INDIA_CALENDAR]
     assert "time_max" not in calls[0][1]
+    assert calls[0][2]==now.replace(hour=0)
     assert cache["source"] == "google" and cache["calendar_id"] == selected
     assert cache["events"][0]["start"] == {"date": "2027-05-30"}
     assert "description" not in cache["events"][0]
     assert holidays is not None and error is None
+
+
+@pytest.mark.parametrize("day,offset",[("2026-11-02","-08:00"),("2026-11-01","-07:00"),("2026-03-08","-08:00")])
+def test_evening_refresh_fetches_from_local_midnight_and_keeps_morning_event(tmp_path,monkeypatch,day,offset):
+    service=CalendarService(tmp_path)
+    service.configure({"calendar_id":"selected-calendar@example.com"})
+    now=datetime.fromisoformat(day).replace(hour=22,tzinfo=ZoneInfo("America/Los_Angeles"))
+    monkeypatch.setattr(service,"now",lambda:now)
+    monkeypatch.setattr(type(service.google),"connected",property(lambda self:True))
+    morning=now.replace(hour=8)
+    row={"id":"morning","summary":"Morning appointment",
+         "start":{"dateTime":morning.isoformat()},
+         "end":{"dateTime":(morning+timedelta(hours=1)).isoformat()}}
+    api_session=Mock()
+    api_session.__enter__=Mock(return_value=api_session)
+    api_session.__exit__=Mock(return_value=False)
+    monkeypatch.setattr(service.google,"session",lambda:api_session)
+    calls=[]
+
+    def get(url,params,timeout):
+        calls.append((url,dict(params)))
+        is_calendar="selected-calendar%40example.com" in url
+        included=datetime.fromisoformat(row["end"]["dateTime"])>datetime.fromisoformat(params["timeMin"])
+        response=Mock()
+        response.json.return_value={"items":[row] if is_calendar and included else []}
+        return response
+
+    api_session.get.side_effect=get
+    frame=service.device_frame(manual=True)
+    assert calls[0][1]["timeMin"]==day+"T00:00:00"+offset
+    assert calls[0][1]["timeZone"]=="America/Los_Angeles"
+    assert [event["id"] for event in service.cache["events"]]==["morning"]
+    assert [event["id"] for event in frame.rows]==["morning"]
+    assert service.frame(now=now.replace(hour=0)+timedelta(days=1)).rows==[]
 
 
 def test_live_scheduler_fetches_once_at_midnight_and_survives_restart(tmp_path, monkeypatch):

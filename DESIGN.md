@@ -234,7 +234,7 @@ The browser softens the device object with the device and screen radii from the 
 
 The sidebar combines present-day context with a single upcoming holiday. Dates and artwork are independent. The original sprite set contains lamps, a tree, a crescent, a flag, a harvest shape, a sun, a Halloween pumpkin and cat, and a generic sparkle fallback. Every sprite is drawn with the same four palette indices.
 
-Agenda rows use 12-hour times. All-day rows omit a time prefix. An ongoing event from an earlier day receives an ONGOING prefix when timed. Empty output uses a small red heading with a short body message. Stale output adds a compact saved-calendar status at the bottom.
+Agenda rows use 12-hour times. All-day rows omit a time prefix. Today's events stay visible until midnight, including appointments that have ended. A timed event that started on an earlier day uses Ongoing while active and Earlier after finishing. Empty output uses a small red heading with a short body message. Stale output adds a compact saved-calendar status at the bottom.
 
 ### Preview and event disclosure
 

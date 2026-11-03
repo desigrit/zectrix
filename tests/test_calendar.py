@@ -1,6 +1,7 @@
 from datetime import datetime, date, timedelta
 from zoneinfo import ZoneInfo
 from PIL import Image, ImageChops, ImageDraw
+import pytest
 from note_calendar.models import upcoming, parse_event
 from note_calendar.holidays import next_holiday, us_federal, bundled_indian_events
 from note_calendar.render import render, pack_2bpp, unpack_2bpp, wrap_label, AGENDA_RIGHT
@@ -16,12 +17,37 @@ def event(start, end, **extra):
     return {"id":"event","summary":"Sample event","start":start,"end":end,**extra}
 
 
-def test_excludes_ended_cancelled_declined_keeps_ongoing():
-    rows=[event("2026-10-26T06:00:00-07:00","2026-10-26T07:00:00-07:00"),
+def test_keeps_finished_today_and_ongoing_excludes_yesterday_cancelled_declined():
+    rows=[event("2026-10-25T23:00:00-07:00","2026-10-26T00:00:00-07:00",id="yesterday"),
+          event("2026-10-26T06:00:00-07:00","2026-10-26T07:00:00-07:00",id="finished-today"),
           event("2026-10-26T06:30:00-07:00","2026-10-26T07:30:00-07:00",id="ongoing"),
           event("2026-10-26T08:00:00-07:00","2026-10-26T09:00:00-07:00",status="cancelled"),
           event("2026-10-26T08:00:00-07:00","2026-10-26T09:00:00-07:00",attendees=[{"self":True,"responseStatus":"declined"}])]
-    assert [e.id for e in upcoming(rows,NOW)]==["ongoing"]
+    assert [e.id for e in upcoming(rows,NOW)]==["finished-today","ongoing"]
+
+
+@pytest.mark.parametrize("day",["2026-11-02","2026-11-01","2026-03-08"])
+def test_finished_events_remain_until_next_local_midnight(day):
+    morning=datetime.fromisoformat(day).replace(hour=8,tzinfo=TZ)
+    late=morning.replace(hour=23,minute=59,second=59,microsecond=999999)
+    tomorrow=(morning+timedelta(days=1)).replace(hour=0)
+    rows=[event(morning.isoformat(),(morning+timedelta(hours=1)).isoformat(),id="morning"),
+          event(tomorrow.isoformat(),(tomorrow+timedelta(hours=1)).isoformat(),id="tomorrow")]
+    frame=render(upcoming(rows,late),late,None)
+    assert [row["id"] for row in frame.rows]==["morning","tomorrow"]
+    assert frame.rows[0]["date"]==day
+    assert frame.rows[0]["time"]=="8 AM"
+    assert [e.id for e in upcoming(rows,tomorrow)]==["tomorrow"]
+
+
+@pytest.mark.parametrize("hour,label",[(0,"Ongoing"),(22,"Earlier")])
+def test_overnight_event_is_kept_today_with_accurate_status(hour,label):
+    now=datetime(2026,11,2,hour,tzinfo=TZ)
+    row=event("2026-11-01T23:00:00-08:00","2026-11-02T01:00:00-08:00",id="overnight")
+    frame=render(upcoming([row],now),now,None)
+    assert frame.rows[0]["date"]=="2026-11-02"
+    assert frame.rows[0]["text"].startswith(label)
+    assert upcoming([row],datetime(2026,11,3,tzinfo=TZ))==[]
 
 
 def test_all_day_exclusive_end_and_multiday():

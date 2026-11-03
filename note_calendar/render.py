@@ -137,8 +137,8 @@ def render(events: list[Event], now: datetime, holiday: Holiday | None, stale=Fa
             row_y = heading_y + HEADING_STEP
 
         time_label = event.time_label()
-        if event.start.date() < now.date():
-            time_label = "Ongoing" if not event.all_day else ""
+        if event.start.date() < now.date() and not event.all_day:
+            time_label = "Ongoing" if event.end > now else "Earlier"
         title_x = x+TIME_COLUMN+SEPARATOR_SPACE if time_label else x
         title = body.fit(event.title, right-title_x)
         time_offset = body.ascent-time_font.ascent

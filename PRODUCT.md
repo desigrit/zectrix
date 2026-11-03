@@ -37,7 +37,7 @@ Note 4c: 400 x 300 pixels, black/white/red/yellow, slow full-screen refresh. Do 
 
 ## Implementation defaults
 
-- America/Los_Angeles timezone; ongoing events remain until they end.
+- America/Los_Angeles timezone; today's events remain through the end of the day, including appointments that have already ended. At midnight, events that ended on the previous day leave the agenda.
 - User-selected schedule: once daily at midnight (12 AM), America/Los_Angeles, including daylight saving changes. Mostly battery power.
 - Calendar-first build. To Do integration and button behavior remain a separate build step.
 - Read-only Google service account or Desktop OAuth access for unattended refresh. A connector snapshot can seed the preview but is explicitly labeled as a snapshot.

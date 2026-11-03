@@ -17,6 +17,7 @@ This lives alongside my [ESL Home Hub](https://github.com/desigrit/esl-home-hub)
 - **Shows one selected Google calendar.** Choose its calendar ID in Settings. Access is read-only, through a service account or Desktop OAuth.
 - **Fills the available space.** Events are grouped by date and continue into future months or years when the calendar is quiet. Long titles are fitted to the available pixel width.
 - **Keeps the details consistent.** Date headings use `Wed 28 Oct`. Only today is highlighted. All-day events have no time; timed events use a centered dot between the time and title.
+- **Keeps today's events until midnight.** Refreshing later in the day retains earlier appointments, followed by future dates.
 - **Refreshes once daily at midnight.** The schedule follows the selected timezone and daylight saving changes. The default timezone is America/Los_Angeles.
 - **Sleeps between updates.** Unchanged images skip the slow screen refresh. Wi-Fi and display power are switched off during deep sleep.
 - **Shows one upcoming holiday.** US federal holidays, including observed dates, plus a curated list of major Indian holidays, with small pixel illustrations.

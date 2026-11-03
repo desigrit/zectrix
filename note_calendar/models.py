@@ -61,6 +61,8 @@ def parse_event(raw: dict, timezone: ZoneInfo) -> Event | None:
 
 
 def upcoming(raw_events: list[dict], now: datetime) -> list[Event]:
+    """Keep events from today and later, including events that ended earlier today."""
+    day_start = now.replace(hour=0, minute=0, second=0, microsecond=0)
     parsed = [parse_event(raw, now.tzinfo) for raw in raw_events]
-    active = [event for event in parsed if event is not None and event.end > now]
+    active = [event for event in parsed if event is not None and event.end > day_start]
     return sorted(active, key=lambda e: (e.day(now), not e.all_day, e.start, e.title, e.id))

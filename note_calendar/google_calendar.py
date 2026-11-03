@@ -101,14 +101,15 @@ class GoogleCalendar:
         return events[:maximum]
 
     def fetch(self, calendar_id: str, now: datetime):
+        day_start=now.replace(hour=0,minute=0,second=0,microsecond=0)
         with self.session() as session:
-            events=self.list_events(session, calendar_id, now)
+            events=self.list_events(session, calendar_id, day_start)
             # Holiday freshness is independent of the personal calendar's successful sync.
             holidays=None
             holiday_error=None
             try:
                 limit=now + timedelta(days=550)
-                holidays=self.list_events(session, INDIA_CALENDAR, now.replace(hour=0,minute=0,second=0,microsecond=0), maximum=250, time_max=limit)
+                holidays=self.list_events(session, INDIA_CALENDAR, day_start, maximum=250, time_max=limit)
             except Exception:
                 holiday_error="Indian holiday refresh failed. The saved holiday dates are still available."
         stamp=datetime.now(timezone.utc).isoformat()
